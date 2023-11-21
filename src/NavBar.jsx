@@ -1,20 +1,18 @@
 import { Link } from 'react-router-dom';
+import './NavBar.css';
 
 const NavBar = ({ user }) => {
     return (
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
+      <nav className="flex-container">
+        <ul className="flex=item">
+          <li className ="btn">
+            <Link to="/">Movies</Link>
           </li>
-          <li>
-            <Link to="/movies">Movies</Link>
-          </li>
-          <li>
+          <li className ="btn">
             <Link to="/actors">Actors</Link>
           </li>
         </ul>
-        {user && <p>Welcome, {user}!</p>}
+     
       </nav>
     );
   };

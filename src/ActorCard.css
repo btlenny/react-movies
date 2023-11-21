@@ -1,0 +1,11 @@
+.item-card {
+  background-image: url(https://picsum.photos/id/1/200/300);
+  border-style: solid;
+  margin: 1vw;
+  border-radius: 5px;
+  border-width: 0.5px;
+  border-color: rgba(150, 150, 150, 0.5);
+  text-align: center;
+  height: 30vh;
+  width: 30vw;
+}

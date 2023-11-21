@@ -1,8 +1,15 @@
-export default function MoviesListPage () {
+import './MoviesListPage.css';
+import MovieCard from './MovieCard.jsx';
+
+
+export default function MoviesListPage(props) {
     return (
-        <div>
-          <h1>Movies List Page</h1>
-          {/* Add your list of movies or related content here */}
-        </div>
+      <div className="container">
+      {
+        props.movies.map(movie => {
+          return <MovieCard key={movie.title} movie={movie} />
+        })
+      }
+    </div>
       );
-    }
+}

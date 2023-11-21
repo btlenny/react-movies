@@ -2,11 +2,12 @@ import { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
 import './App.css';
-import NavBar from './NavBar';
+import NavBar from './NavBar.jsx';
 import LoginPage from './LoginPage.jsx';
 import MoviesListPage from './MoviesListPage.jsx';
 import MoviesDetailPage from './MoviesDetailPage.jsx';
 import ActorListPage from './ActorListPage.jsx';
+import { movies } from './data.js';
 
 
 export default function App() {
@@ -22,12 +23,13 @@ export default function App() {
         {user ? (
           <>
             <h1>Welcome, {user}!</h1>
-            <NavBar />
+            <NavBar user={user} />
             <Routes>
               {/* Use unique paths for each route */}
-              <Route path="/movies/" element={<MoviesListPage />} />
-              <Route path="/movies/:movieName" element={<MoviesDetailPage />} />
-              <Route path="/actors" element={<ActorListPage />} />
+              <Route path="/" element={<MoviesListPage movies={movies}/>} />
+              <Route path="/movies/:movieName" element={<MoviesDetailPage movies={movies}/>} />
+              <Route path="/actors" element={<ActorListPage movies={movies}/>} />
+              <Route path="/" element={<div>Home Page Content</div>} />
             </Routes>
           </>
         ) : (
